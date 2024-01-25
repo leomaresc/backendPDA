@@ -13,6 +13,7 @@ await db.connect();
 const getAllErrors = async (req, res) => {
     const result = await db.query('SELECT * FROM errores');
     console.log(result.rows)
+    res.send(JSON.stringify(result.rows))
 }
 
 export default getAllErrors;

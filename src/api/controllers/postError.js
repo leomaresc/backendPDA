@@ -11,8 +11,8 @@ const db = new pg.Client({
 await db.connect();
 
 const postError = async (req, res) => {
-    
-    res.send(req.body)
+    db.query('INSERT INTO errores(fecha, supervisor, ruta, nombre, categoria, error, observacion) VALUES($1, $2, $3, $4, $5, $6, $7)', [req.body.fecha, req.body.supervisor, req.body.ruta, req.body.nombre, req.body.categoria, req.body.error, req.body.observacion])
+    res.sendStatus(200);
 }
 
 export default postError;

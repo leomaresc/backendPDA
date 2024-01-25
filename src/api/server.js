@@ -1,10 +1,11 @@
-import Express from 'express';
+import express from 'express';
 import dotenv from 'dotenv'
 import Errors from './routes/Errors.js'
 
 dotenv.config();
-const app = Express();
+const app = express();
 const port = 3000;
+app.use(express.json());
 
 app.use('/', Errors);
 
