@@ -10,10 +10,11 @@ const db = new pg.Client({
 
 await db.connect();
 
-const getAllErrors = async (req, res) => {
-    const result = await db.query('SELECT * FROM errores');
+const getErrorsByDate = async (req, res) => {
+    const fecha = req.query.fecha
+    const result = await db.query(`SELECT * FROM errores WHERE fecha=$1`, [fecha]);
     console.log(result.rows)
     res.send(JSON.stringify(result.rows))
 }
 
-export default getAllErrors;
+export default getErrorsByDate;

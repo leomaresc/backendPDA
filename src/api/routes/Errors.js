@@ -1,10 +1,10 @@
 import express from "express";
-import getAllErrors from "../controllers/getErrors.js";
+import getErrorsByDate from "../controllers/getErrorsByDate.js";
 import postError from "../controllers/postError.js";
 
 const router = express.Router();
 
-router.get('/getAllErrors', getAllErrors)
+router.get('/getErrorsByDate', getErrorsByDate)
 router.post('/postError', postError)
 
 export default router;
