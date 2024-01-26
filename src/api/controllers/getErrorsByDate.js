@@ -12,9 +12,15 @@ await db.connect();
 
 const getErrorsByDate = async (req, res) => {
     const fecha = req.query.fecha
-    const result = await db.query(`SELECT * FROM errores WHERE fecha=$1`, [fecha]);
-    console.log(result.rows)
-    res.send(JSON.stringify(result.rows))
+    if(fecha === "all"){
+        const result = await db.query(`SELECT * FROM errores`)
+        console.log(result.rows)
+        res.send(JSON.stringify(result.rows))
+    } else{
+        const result = await db.query(`SELECT * FROM errores WHERE fecha=$1`, [fecha]);
+        console.log(result.rows)
+        res.send(JSON.stringify(result.rows))
+    }
 }
 
 export default getErrorsByDate;
