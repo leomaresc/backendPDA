@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import Errors from './routes/Errors.js';
 
 const app = express();
-const hostname = "10.101.46.136";
+// Para que funcionen las pruebas en expo se debe cocolor aquí de manera manual la ipv4 de la maquina donde se está ejecutando el servidor.
+const hostname = "192.168.1.89";
 const port = 3000;
 
 app.use(express.json());
