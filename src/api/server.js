@@ -5,7 +5,7 @@ import LoginRegister from './routes/LoginRegister.js'
 
 const app = express();
 // Para que funcionen las pruebas en expo se debe cocolor aquí de manera manual la ipv4 de la maquina donde se está ejecutando el servidor.
-const hostname = "10.101.46.136";
+const hostname = "localhost";
 const port = 3000;
 
 app.use(express.json());
