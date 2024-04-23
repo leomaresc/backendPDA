@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import Errors from './routes/Errors.js';
+import Grocers from './routes/Grocers.js'
 import LoginRegister from './routes/LoginRegister.js'
 
 const app = express();
@@ -15,6 +16,7 @@ dotenv.config();
 
 app.use('/', Errors);
 app.use('/', LoginRegister)
+app.use('/', Grocers)
 
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
